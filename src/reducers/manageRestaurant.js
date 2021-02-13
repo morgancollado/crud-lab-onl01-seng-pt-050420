@@ -15,10 +15,12 @@ function manageRestaurants(state = [], action) {
                 id: cuid(),
                 text: action.name
             }
-            return {restaurants: state.concat(restaurant)}
+            return state.concat(restaurant)
         case "DELETE_RESTAURANT":
-            return {restaurants: state.restaurants.filter(restaurant => restaurant.id !== action.id)}
-            default: 
+            const restaurants = state.filter(restaurant => restaurant.id != action.id)
+            return {...state, restaurants}
+
+        default: 
             return state
     }
 }

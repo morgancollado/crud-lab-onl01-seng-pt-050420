@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 
 class RestaurantInput extends Component {
   state = {
-    name: ""
+    text: ""
   }
 
   onChange = (e) => {
     this.setState({
-      name: e.target.value
+      text: e.target.value
     })
   }
 
   onSubmit = (e) => {
     e.preventDefault()
-    this.props.addRestaurant(this.state.name)
+    this.props.addRestaurant(this.state.text)
     this.setState({
-      name: ""
+      text: ""
     })
   }
   
@@ -23,7 +23,7 @@ class RestaurantInput extends Component {
     return (
       <div>
         <form onSubmit={this.onSubmit}>
-          <input type="text" value={this.state.name} onChange={this.onChange}/>
+          <input type="text" value={this.state.text} onChange={this.onChange}/>
           <input type="submit"/>
         </form>
       </div>

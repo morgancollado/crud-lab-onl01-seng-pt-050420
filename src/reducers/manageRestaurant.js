@@ -34,6 +34,10 @@ function manageReviews(state = [], action){
                 restaurantId: action.restaurantId
             }
             return state.concat(review)
+
+        case "DELETE_REVIEW":
+            const reviews = state.filter(review => review.id !== action.id)
+            return reviews
         default: 
         return state
     }

@@ -13,7 +13,9 @@ function manageRestaurants(state = [], action) {
         case "ADD_RESTAURANT":
             const restaurant = {
                 id: cuid(),
-                text: action.name
+                text: action.text,
+                restaurantId: 
+
             }
             return state.concat(restaurant)
         case "DELETE_RESTAURANT":
@@ -27,6 +29,11 @@ function manageRestaurants(state = [], action) {
 
 function manageReviews(state = [], action){
     switch(action.type){
+        case "ADD_REVIEW":
+            const review = {
+                id: cuid(),
+                text: action.name
+            }
         default: 
         return state
     }

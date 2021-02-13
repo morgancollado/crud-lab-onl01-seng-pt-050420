@@ -18,7 +18,7 @@ function manageRestaurants(state = [], action) {
             return state.concat(restaurant)
         case "DELETE_RESTAURANT":
             const restaurants = state.filter(restaurant => restaurant.id != action.id)
-            return {...state, restaurants}
+            return restaurants
 
         default: 
             return state

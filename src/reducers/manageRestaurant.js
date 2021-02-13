@@ -30,8 +30,8 @@ function manageReviews(state = [], action){
         case "ADD_REVIEW":
             const review = {
                 id: cuid(),
-                text: action.text, 
-                restaurantId: action.restaurantId
+                text: action.review.text, 
+                restaurantId: action.review.restaurantId
             }
             return state.concat(review)
 

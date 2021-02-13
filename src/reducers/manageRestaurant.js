@@ -8,16 +8,14 @@ const rootReducer = combineReducers({
 
 export default rootReducer
 
-function manageRestaurants(state = {
-    restaurants: []
-}, action) {
+function manageRestaurants(state = [], action) {
     switch(action.type){
         case "ADD_RESTAURANT":
             const restaurant = {
                 id: cuid(),
                 text: action.name
             }
-            return {restaurants: state.restaurants.concat(restaurant)}
+            return {restaurants: state.concat(restaurant)}
         case "DELETE_RESTAURANT":
             return {restaurants: state.restaurants.filter(restaurant => restaurant.id !== action.id)}
             default: 
@@ -25,9 +23,7 @@ function manageRestaurants(state = {
     }
 }
 
-function manageReviews(state ={
-    reviews: []
-}, action){
+function manageReviews(state = [], action){
     switch(action.type){
         default: 
         return state

@@ -8,8 +8,8 @@ class ReviewsContainer extends Component {
   render() {
     return (
       <div>
-        <ReviewInput />
-        <Reviews />
+        <ReviewInput addReview={this.props.addReview}/>
+        <Reviews reviews={this.props.reviews} deleteReview={this.props.deleteReview}/>
       </div>
     )
   }

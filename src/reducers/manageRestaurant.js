@@ -20,12 +20,16 @@ function manageRestaurants(state = {
             return {restaurants: state.restaurants.concat(restaurant)}
         case "DELETE_RESTAURANT":
             return {restaurants: state.restaurants.filter(restaurant => restaurant.id !== action.id)}
+            default: 
+            return state
     }
-
 }
 
 function manageReviews(state ={
     reviews: []
 }, action){
-
+    switch(action.type){
+        default: 
+        return state
+    }
 }
